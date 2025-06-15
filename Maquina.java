@@ -1,29 +1,27 @@
-package TPEspecial;
-;
+package MaquinasTPE;
 
 public class Maquina {
-  	private int piezas;
-  	private String nombre;
-	
-	public Maquina(int piezas, String nombre) {
-		this.piezas = pieza;
-		this.nombre = nombre;
-	}
-	
-	public String getNombre() {
-		return this.nombre;
-	}
+    private int piezas;
+    private String nombre;
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public Maquina(int piezas, String nombre) {
+        this.piezas = piezas;
+        this.nombre = nombre;
+    }
 
-	public void setPiezas(int piezas) {
-		this.piezas = piezas;
-	}
+    public int getPiezas() {
+        return piezas;
+    }
 
-	public int getPiezas() {
-		return this.piezas;
-	}
+    public void setPiezas(int piezas) {
+        this.piezas = piezas;
+    }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }
