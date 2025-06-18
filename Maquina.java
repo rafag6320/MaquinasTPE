@@ -1,10 +1,8 @@
-package MaquinasTPE;
-
 public class Maquina {
     private int piezas;
     private String nombre;
 
-    public Maquina(int piezas, String nombre) {
+    public Maquina(String nombre, int piezas) {
         this.piezas = piezas;
         this.nombre = nombre;
     }

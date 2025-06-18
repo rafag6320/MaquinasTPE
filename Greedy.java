@@ -1,5 +1,3 @@
-package MaquinasTPE;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,17 +6,17 @@ public class Greedy {
         //Se ordenan las maquinas de mayor a menor
         maquinas.sort((a,b)->b.getPiezas()-a.getPiezas());
 
-        List<Maquina>resultado = new ArrayLists<>();
+        List<Maquina>resultado = new ArrayList<>();
         int sumaActual=0;
         int candidatosTotales=0;
 
-        while(suma<piezasAProducir){
+        while(sumaActual<piezasAProducir){
             boolean seAgrego=false;
             for(Maquina m: maquinas){
                 candidatosTotales++;
-                if(suma+m.getPiezas()<=objetivo){
+                if(sumaActual+m.getPiezas()<=piezasAProducir){
                     resultado.add(m);
-                    suma+=m.getPiezas();
+                    sumaActual+=m.getPiezas();
                     seAgrego=true;
                     break;
                 }

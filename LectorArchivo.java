@@ -1,9 +1,13 @@
 import java.util.List;
+import java.util.ArrayList;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class LectorArchivo {
     public static int piezasTotales;
 
-    public static List<Maquina> leerArchivo(String path){
+    public static List<Maquina> leerArchivo(String path) throws IOException{
 
         List<Maquina> maquinas = new ArrayList<>();
         List<String> lineas = Files.readAllLines(Paths.get(path));
