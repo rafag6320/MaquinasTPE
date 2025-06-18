@@ -1,3 +1,5 @@
+package MaquinasTpe;
+
 public class Maquina {
     private int piezas;
     private String nombre;
@@ -21,5 +23,9 @@ public class Maquina {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    public String toString() {
+        return nombre + " (" + piezas + " piezas)";
     }
 }

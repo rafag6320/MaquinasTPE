@@ -1,8 +1,10 @@
+package MaquinasTpe;
+
 import java.io.IOException;
 import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException{
-        List<Maquina> maquinas = LectorArchivo.leerArchivo("listado.txt");
+        List<Maquina> maquinas = LectorArchivo.leerArchivo("src/MaquinasTpe/listado.txt");
         int piezasAProducir = LectorArchivo.piezasTotales;
 
 

@@ -1,3 +1,5 @@
+package MaquinasTpe;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,19 +12,15 @@ public class Greedy {
         int sumaActual=0;
         int candidatosTotales=0;
 
-        while(sumaActual<piezasAProducir){
-            boolean seAgrego=false;
-            for(Maquina m: maquinas){
-                candidatosTotales++;
-                if(sumaActual+m.getPiezas()<=piezasAProducir){
-                    resultado.add(m);
-                    sumaActual+=m.getPiezas();
-                    seAgrego=true;
-                    break;
+        for(Maquina m : maquinas){
+            while(sumaActual + m.getPiezas() <= piezasAProducir){
+                resultado.add(m);
+                sumaActual += m.getPiezas();
+                candidatosTotales++; 
+                if(sumaActual == piezasAProducir){
+                    return new Solucion(resultado, candidatosTotales);
                 }
             }
-            //No se puede continuar
-            if(!seAgrego) break;
         }
         return new Solucion(resultado, candidatosTotales);
     }
