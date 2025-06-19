@@ -11,17 +11,19 @@ public class Greedy {
         List<Maquina>resultado = new ArrayList<>();
         int sumaActual=0;
         int candidatosTotales=0;
-
         for(Maquina m : maquinas){
+  	//para cada maquina se fija si la suma de su cant de piezas es menor a la de producir
             while(sumaActual + m.getPiezas() <= piezasAProducir){
-                resultado.add(m);
+                resultado.add(m); 
                 sumaActual += m.getPiezas();
-                candidatosTotales++; 
+                candidatosTotales++; //Se añade la maquina, se incrementa la cant y aumenta los candidatos usados;
+    //Si el resultado es igual devuelve la solucion 
                 if(sumaActual == piezasAProducir){
                     return new Solucion(resultado, candidatosTotales);
                 }
             }
         }
+      //si no devuelve lo que se consiguio devuelve la aproximacion
         return new Solucion(resultado, candidatosTotales);
     }
 }
