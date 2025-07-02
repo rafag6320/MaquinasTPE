@@ -1,4 +1,4 @@
-package MaquinasTpe;
+package MaquinasTPE;
 
 public class Maquina {
     private int piezas;

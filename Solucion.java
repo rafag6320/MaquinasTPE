@@ -1,4 +1,4 @@
-package MaquinasTpe;
+package MaquinasTPE;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,13 +4,14 @@ import java.util.List;
 import java.util.ArrayList;
 
 /*
-* Estrategia:
-* El arbol se genera probando cada maquina con un indice en cada paso,
+* Estrategia: El arbol se genera probando cada maquina con un indice en cada paso,
 * un estado es válido si no supera las piezas a producir (piezasAProducir).
 * El estado final es cuando se producen exactamente las piezas requeridas.
+*
 * Podas: si se supera la cantidad de piezas a producir, se termina esa rama
-*        si la cantidad de maquinas utilizadas es mayor a la mejor solucion encontrada, se poda esa rama.
-* Boceto de la generación del arbol en el readme
+* si la cantidad de maquinas utilizadas es mayor a la mejor solucion encontrada, se poda esa rama.
+*
+* Boceto de la generación del arbol en el ReadMe
 */
 
 public class Backtrack {
@@ -22,6 +23,7 @@ public class Backtrack {
     public Backtrack(List<Maquina> maquinas, int piezasAProducir) {
         this.maquinas = maquinas;
         this.piezasAProducir = piezasAProducir;
+        this.maquinas.sort((a, b) -> b.getPiezas() - a.getPiezas()); // Se añade un sort al igual que el greedy para minimizar los estados generados
     }
 
     
