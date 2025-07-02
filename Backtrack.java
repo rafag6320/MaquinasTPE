@@ -1,15 +1,6 @@
-package MaquinasTpe;
-
 import java.util.List;
 import java.util.ArrayList;
-/*
-* Estrategia:
-* El arbol se genera probando cada máquina en cada paso, un estado es válido si
-* no supera las piezas a producir (piezasAProducir).
-* El estado final es cuando se producen exactamente las pieds requeridas.
-* Podas: si se supera la cantidad de piezas a producir, se termina esa rama
-* Boceto de la generación del arbol en el readme
-*/
+
 public class Backtrack {
     private List<Maquina> maquinas;
     private int piezasAProducir;
