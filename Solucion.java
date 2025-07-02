@@ -1,5 +1,6 @@
 package MaquinasTpe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Solucion {
@@ -7,17 +8,21 @@ public class Solucion {
     private int piezasProducidas, puestasEnFuncionamiento, estadosGenerados;
 
     public Solucion(List<Maquina> secuencia, int estadosGenerados){
-        this.secuencia=secuencia;
+        this.secuencia = (secuencia != null) ? secuencia : new ArrayList<>();
         this.estadosGenerados=estadosGenerados;
         this.puestasEnFuncionamiento=secuencia.size();
         this.piezasProducidas=secuencia.stream().mapToInt(Maquina::getPiezas).sum();
     }
 
     public void imprimir() {
-        System.out.println("Secuencia obtenida: " + secuencia);
-        System.out.println("Piezas producidas: " + piezasProducidas);
-        System.out.println("Puestas en funcionamiento: " + puestasEnFuncionamiento);
-        System.out.println("Estados generados: " + estadosGenerados);
+        if(secuencia!=null){
+            System.out.println("Secuencia obtenida: " + secuencia);
+            System.out.println("Piezas producidas: " + piezasProducidas);
+            System.out.println("Puestas en funcionamiento: " + puestasEnFuncionamiento);
+            System.out.println("Estados generados: " + estadosGenerados);
+        }else{
+            System.out.println("No se pudo obtener una solución optima");
+        }
     }
 
     public List<Maquina> getSecuencia() {
