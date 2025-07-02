@@ -24,6 +24,7 @@ public class Greedy {
             //No se puede continuar
             if(!seAgrego) break;
         }
+        
         return new Solucion(resultado, candidatosTotales);
     }
 }
