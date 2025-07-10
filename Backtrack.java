@@ -43,13 +43,14 @@ public class Backtrack {
             return;
         }
         
-        //Si la suma se pasa de pieza a producir, se poda
-        if (suma > piezasAProducir) return;
-        
         if (mejorSolucion != null && actual.size() >= mejorSolucion.getSecuencia().size()) return; // Poda si ya hay una mejor solución con menos maquinas
 
         for (int i = index; i < maquinas.size(); i++) {
             Maquina M = maquinas.get(i);
+
+            //Si la suma se pasa de pieza a producir, se poda
+            if (suma + m.getPiezas()>piezasAProducir) continue;
+
             actual.add(M); // Agrega la maquina actual a la secuencia
             backtrackRecursivo(actual, suma + M.getPiezas(), i);
             actual.remove(actual.size() - 1);
