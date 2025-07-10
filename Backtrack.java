@@ -49,7 +49,7 @@ public class Backtrack {
             Maquina M = maquinas.get(i);
 
             //Si la suma se pasa de pieza a producir, se poda
-            if (suma + m.getPiezas()>piezasAProducir) continue;
+            if (suma + M.getPiezas()>piezasAProducir) continue;
 
             actual.add(M); // Agrega la maquina actual a la secuencia
             backtrackRecursivo(actual, suma + M.getPiezas(), i);
